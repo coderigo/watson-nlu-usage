@@ -1,0 +1,19 @@
+{
+    "bluemix": {
+        "apiVersion": "v2",
+        "apiEndpoint": "https://api.ng.bluemix.net",
+        "authEndpoint": "https://login.ng.bluemix.net/UAALoginServerWAR/oauth/token",
+        "usageEndpoint": "https://rated-usage.ng.bluemix.net",
+        "region": "us-south"
+    },
+    "watson": {
+        "plan": "free",
+        "maxFileSizeKB": 50,
+        "maxCharactersPerCall": 10000,
+        "transactionTiers": [
+            { "from": 1, "to": 250000 , "costPerItem": 0.003 },
+            { "from": 250001, "to": 5000000, "costPerItem": 0.001 },
+            { "from": 5000001, "to": "Infinity", "costPerItem": 0.0002 }
+        ]
+    }
+}

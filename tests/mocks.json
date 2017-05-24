@@ -1,0 +1,129 @@
+{
+  "parameters": {
+    "username": "test@email.com",
+    "password": "WoZcm0IKIHe26OY",
+    "organizationName": "test-organization",
+    "spaceName": "test-space",
+    "serviceName": "test-service",
+    "instanceName": "test-nlu-instance"
+  },
+  "authSuccessBody": {
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJlZGNmMGRkNC01NDNkLTQzZTctOThhNi0yYzRjNGM0NjIyYjMiLCJzdWIiOiJlMTUyYzMzOS0xMmUyLTRhZGQtYTQxNS0xNGQxOTA5NjU1ZjkiLCJzY29wZSI6WyJvcGVuaWQiLCJ1YWEudXNlciIsImNsb3VkX2NvbnRyb2xsZXIucmVhZCIsInBhc3N3b3JkLndyaXRlIiwiY2xvdWRfY29udHJvbGxlci53cml0ZSJdLCJjbGllbnRfaWQiOiJjZiIsImNpZCI6ImNmIiwiYXpwIjoiY2YiLCJncmFudF90eXBlIjoicGFzc3dvcmQiLCJ1c2VyX2lkIjoiZTE1MmMzMzktMTJlMi00YWRkLWE0MTUtMTRkMTkwOTY1NWY5Iiwib3JpZ2luIjoidWFhIiwidXNlcl9uYW1lIjoiZGV2b3BzQGNvbnRleHR1YWwubGkiLCJlbWFpbCI6ImRldm9wc0Bjb250ZXh0dWFsLmxpIiwiYXV0aF90aW1lIjoxNDk1MTc4ODU3LCJyZXZfc2lnIjoiZDFhMzRmMzQiLCJpYXQiOjE0OTUxNzg4NTcsImV4cCI6MTQ5NjM4ODQ1NywiaXNzIjoiaHR0cHM6Ly91YWEubmcuYmx1ZW1peC5uZXQvb2F1dGgvdG9rZW4iLCJ6aWQiOiJ1YWEiLCJhdWQiOlsiY2YiLCJvcGVuaWQiLCJ1YWEiLCJjbG91ZF9jb250cm9sbGVyIiwicGFzc3dvcmQiXX0.nlEWoZcm0IKIHe26OYAnjt8QQ16i4d882pF6akeO3xK",
+    "token_type": "bearer",
+    "refresh_token": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI5Mzg0OTE0OS05ZDA1LTRlNjAtYjRiNS04YjlkMmEzMGQ3NGEtciIsInN1YiI6ImUxNTJjMzM5LTEyZTItNGFkZC1hNDE1LTE0ZDE5MDk2NTVmOSIsInNjb3BlIjpbIm9wZW5pZCIsInVhYS51c2VyIiwiY2xvdWRfY29udHJvbGxlci5yZWFkIiwicGFzc3dvcmQud3JpdGUiLCJjbG91ZF9jb250cm9sbGVyLndyaXRlIl0sImlhdCI6MTQ5NTE3ODg1NywiZXhwIjoxNDk3NzcwODU3LCJjaWQiOiJjZiIsImNsaWVudF9pZCI6ImNmIiwiaXNzIjoiaHR0cHM6Ly91YWEubmcuYmx1ZW1peC5uZXQvb2F1dGgvdG9rZW4iLCJ6aWQiOiJ1YWEiLCJncmFudF90eXBlIjoicGFzc3dvcmQiLCJ1c2VyX25hbWUiOiJkZXZvcHNIO9udGV4dHVhbC5saSIsIm9yaWdpbiI6InVhYSIsInVzZXJfaWQiOiJlMTUyYzMzOS0xMmUyLTRhZGQtYTQxNS0xNGQxOTA5NjU1ZjkiLCJyZXZfc2lnIjoiZDFhMzRmMzQiLCJhdWQiOlsiY2YiLCJvcGVuaWQiLCJ1YWEiLCJjbG91ZF9jb250cm9sbGVyIiwicGFzc3dvcmQiXX0.W24jesBRFs-uiPlcmMOAtPLCQNkZSFRSfA81FlaKNzQ",
+    "expires_in": 1209599,
+    "scope": "openid uaa.user cloud_controller.read password.write cloud_controller.write",
+    "jti": "edcf0d34-543d-43e7-98a6-2c4c4c4622b7"
+  },
+  "authFailureBody": {
+    "error_description": "Authentication failure - your login credentials are invalid.",
+    "error": "unauthorized"
+  },
+  "organizationSuccessBody": {
+    "total_results": 1,
+    "total_pages": 1,
+    "prev_url": null,
+    "next_url": null,
+    "resources": [
+      {
+        "metadata": {
+          "guid": "89be0389-f9f4-404f-bd28-c9c2691b762a",
+          "url": "/v2/organizations/89be0389-f9f4-404f-bd28-c9c2691b762a",
+          "created_at": "2017-05-09T05:57:47Z",
+          "updated_at": "2017-05-10T03:59:40Z"
+        },
+        "entity": {
+          "name": "test-organization",
+          "billing_enabled": false,
+          "quota_definition_guid": "7f66aaf3-9e9b-49f4-83d9-40d92d318ff3",
+          "status": "active",
+          "quota_definition_url": "/v2/quota_definitions/7f66aaf3-9e9b-49f4-83d9-40d92d318ff3",
+          "spaces_url": "/v2/organizations/89be0389-f9f4-404f-bd28-c9c2691b762a/spaces",
+          "domains_url": "/v2/organizations/89be0389-f9f4-404f-bd28-c9c2691b762a/domains",
+          "private_domains_url": "/v2/organizations/89be0389-f9f4-404f-bd28-c9c2691b762a/private_domains",
+          "users_url": "/v2/organizations/89be0389-f9f4-404f-bd28-c9c2691b762a/users",
+          "managers_url": "/v2/organizations/89be0389-f9f4-404f-bd28-c9c2691b762a/managers",
+          "billing_managers_url": "/v2/organizations/89be0389-f9f4-404f-bd28-c9c2691b762a/billing_managers",
+          "auditors_url": "/v2/organizations/89be0389-f9f4-404f-bd28-c9c2691b762a/auditors",
+          "app_events_url": "/v2/organizations/89be0389-f9f4-404f-bd28-c9c2691b762a/app_events",
+          "space_quota_definitions_url": "/v2/organizations/89be0389-f9f4-404f-bd28-c9c2691b762a/space_quota_definitions"
+        }
+      }
+    ]
+  },
+  "organizationUsageSuccessBody": {
+    "organizations": [
+      {
+        "id": "89be0389-f9f4-404f-bd28-c9c2691b762a",
+        "name": "test-organization",
+        "region": "us-south",
+        "non_billable_usage": {
+          "spaces": [
+            {
+              "id": "0806a6e3-2b1b-4aff-ae68-b236a4afbb94",
+              "services": [
+                {
+                  "id": "bb6393bc-7d81-443b-9728-61b704f6eca7",
+                  "instances": [
+                    {
+                      "id": "73f770a3-37d9-4f5c-ae78-a4a3cdb07d43",
+                      "plan_id": "e882992-4140-4a9b-8db9-c419169e9be5",
+                      "name": "test-nlu-instance",
+                      "usage": [
+                        {
+                          "unitId": "ITEMS_PER_MONTH",
+                          "quantity": 1000,
+                          "cost": 0,
+                          "applicationId": "unknown",
+                          "unit": "ITEM",
+                          "name": "unknown"
+                        }
+                      ]
+                    }
+                  ],
+                  "name": "test-service"
+                }
+              ],
+              "applications": [],
+              "containers": [],
+              "name": "test-space"
+            }
+          ]
+        },
+        "billable_usage": {
+          "spaces": [
+            {
+              "id": "0806a6e3-2b1b-4aff-ae68-b236a4afbb94",
+              "services": [
+                {
+                  "id": "bb6393bc-7d81-443b-9728-61b704f6eca7",
+                  "instances": [
+                    {
+                      "id": "73f770a3-37d9-4f5c-ae78-a4a3cdb07d43",
+                      "plan_id": "e882992-4140-4a9b-8db9-c419169e9be5",
+                      "name": "test-nlu-instance",
+                      "usage": [
+                        {
+                          "unitId": "ITEMS_PER_MONTH",
+                          "quantity": 10,
+                          "cost": 0.03,
+                          "applicationId": "unknown",
+                          "unit": "ITEM",
+                          "name": "unknown"
+                        }
+                      ]
+                    }
+                  ],
+                  "name": "test-service"
+                }
+              ],
+              "applications": [],
+              "containers": [],
+              "name": "test-space"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
