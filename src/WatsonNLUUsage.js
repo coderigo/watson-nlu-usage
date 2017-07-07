@@ -61,7 +61,7 @@ module.exports = class WatsonNLUUsage {
         });
     }
 
-    getUsage({ month = moment().format('YYYY-MM'), includeFreeUsage = true } = {}) {
+    getUsage({ month = moment().utc().format('YYYY-MM'), includeFreeUsage = true } = {}) {
         const instance = this;
         const params = { instance, month };
 
