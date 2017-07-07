@@ -65,7 +65,8 @@ module.exports = class WatsonNLUUsage {
         const instance = this;
         const params = { instance, month };
 
-        return instance.authenticate()
+        return instance
+                .authenticate()
                 .then(() => getOrganizationIdFromName(params))
                 .then((organizationId) => {
                     instance.organizationId = organizationId;
@@ -75,31 +76,42 @@ module.exports = class WatsonNLUUsage {
                     const organization = response.organizations.find(org => (
                         org.name === instance.organizationName
                     ));
-                    const usageClasses = includeFreeUsage ? ['non_billable_usage', 'billable_usage'] : ['billable_usage'];
-                    const reduceSeed = { itemCount: 0, totalCost: 0 };
-                    const usage = usageClasses.map((usageClass) => {
-                        const space = organization[usageClass].spaces.find(qSpace => (
-                            qSpace.name === instance.spaceName
-                        ));
-                        if (!space) {
-                            return { quantity: 0, cost: 0 };
-                        }
-                        const service = space.services.find(qService => (
-                            qService.name === instance.serviceName
-                        ));
-                        const nluInstance = service.instances.find(qNLUInstance => (
-                            qNLUInstance.name === instance.instanceName
-                        ));
-                        const nluInstanceUsage = nluInstance.usage.find(usageEntry => (
-                            usageEntry.unitId === 'ITEMS_PER_MONTH'
-                        ));
-                        return { quantity: nluInstanceUsage.quantity, cost: nluInstanceUsage.cost };
-                    })
-                    .reduce((accum, usageClass) => {
-                        reduceSeed.itemCount += usageClass.quantity;
-                        reduceSeed.totalCost += usageClass.cost;
-                        return reduceSeed;
-                    }, reduceSeed);
+                    const hasNoReportedUsageForMonth = (typeof organization === 'undefined');
+                    const seedUsage = { itemCount: 0, totalCost: 0 };
+                    let usage;
+
+                    if (hasNoReportedUsageForMonth) {
+                        usage = seedUsage;
+                    } else {
+                        const usageClasses = includeFreeUsage ? ['non_billable_usage', 'billable_usage'] : ['billable_usage'];
+                        usage = usageClasses.map((usageClass) => {
+                            const space = organization[usageClass].spaces.find(qSpace => (
+                                qSpace.name === instance.spaceName
+                            ));
+                            if (!space) {
+                                return { quantity: 0, cost: 0 };
+                            }
+                            const service = space.services.find(qService => (
+                                qService.name === instance.serviceName
+                            ));
+                            const nluInstance = service.instances.find(qNLUInstance => (
+                                qNLUInstance.name === instance.instanceName
+                            ));
+                            const nluInstanceUsage = nluInstance.usage.find(usageEntry => (
+                                usageEntry.unitId === 'ITEMS_PER_MONTH'
+                            ));
+                            return {
+                                quantity: nluInstanceUsage.quantity,
+                                cost: nluInstanceUsage.cost
+                            };
+                        })
+                        .reduce((accum, usageClass) => {
+                            seedUsage.itemCount += usageClass.quantity;
+                            seedUsage.totalCost += usageClass.cost;
+                            return seedUsage;
+                        }, seedUsage);
+                    }
+
                     return usage;
                 })
                 .catch((error) => {

@@ -39,10 +39,10 @@ describe('get nlu usage', () => {
     ));
 
     it('should account for zero usage when no billing history exists', () => {
-        usageMockBody.organizations[0].billable_usage.spaces = [];
+        usageMockBody.organizations = [];
 
         return watsonNLUUsage.getUsage({ includeFreeUsage: true }).then(response => (
-            expect(response).to.deep.equal({ itemCount: 1000, totalCost: 0 })
+            expect(response).to.deep.equal({ itemCount: 0, totalCost: 0 })
         ));
     });
 });

@@ -58,7 +58,6 @@ export const getOrganizationMetering = ({ instance, month }) => {
         },
         json: true
     };
-
     return request(requestOptions);
 };
 
