@@ -1,6 +1,6 @@
 {
   "name": "watson-nlu-usage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Retrieve and estimate usage cost of calls to Watson Natural Language Understanding API.",
   "main": "./dist/WatsonNLUUsage.js",
   "scripts": {
