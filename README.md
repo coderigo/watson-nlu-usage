@@ -8,6 +8,8 @@ Watson [Natural Language Understanding](https://www.ibm.com/watson/developerclou
 
 The absorption of [Alchemy API](https://www.alchemyapi.com/) by [IBM Watson Developer Cloud](https://www.ibm.com/watson/developercloud/) into [Watson NLU](https://www.ibm.com/watson/developercloud/natural-language-understanding.html) means usage information no longer comes back in API response headers. This module provides a way to get usage information using IBM Bluemix APIs instead.
 
+**UPDATE**: Watson has recently begun sending usage information in response bodies under an object aptly named `usage` with three properties `text_units, text_characters, features`. You should trust those figures above those produced by this module. This module can still be used, however, to _estimate_ and get current usage.
+
 <!-- toc -->
 - [Installation](#installation)
 - [Usage](#usage)
